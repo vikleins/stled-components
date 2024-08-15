@@ -1,16 +1,27 @@
+import logo from './logo.svg'
 import './App.css'
-import StyledButton from './components/Button/Button';
+import './styles.css'
+import StyledButton, {FancyButton, SubmitButton} from './components/Button/Button';
 
 
 
 function App() {
   return (
     <div className="App">
-      <StyledButton>Styled Button</StyledButton>
+      <img src={logo} className='App-logo' alt='logo'></img>
+      <StyledButton type='submit'>Styled Button</StyledButton>
       <div>
         <br/>
       </div>
       <StyledButton variant='outline'>Styled Button</StyledButton>
+      <div>
+        <br/>
+      </div>
+      <FancyButton as='a'>Fancy Button</FancyButton>
+      <div>
+        <br/>
+      </div>
+      <SubmitButton>Fancy Button</SubmitButton>
     </div>
   );
 }
