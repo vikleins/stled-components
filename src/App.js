@@ -1,4 +1,4 @@
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider,  createGlobalStyle } from 'styled-components';
 import logo from './logo.svg'
 import './App.css'
 import './styles.css'
@@ -13,12 +13,20 @@ const theme = {
   light: {
     primary: "#fff",
     text: "#000"
-  }
+  },
+  fontFamoly: 'Segoe UI'
 }
+
+const GlobalStyle = createGlobalStyle`
+button{
+  font-family: ${(props) => props.theme.fontFamily};
+}
+`
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
     <div className="App">
       {/* <img src={logo} className='App-logo' alt='logo'></img>
        */}
